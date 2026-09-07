@@ -1,5 +1,5 @@
 
-![[Pasted image 20260729180334.png]]
+![Nmap Scan](Pasted%20image%2020260729180334.png)
 
 
 
