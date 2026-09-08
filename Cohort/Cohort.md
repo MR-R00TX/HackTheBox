@@ -1,9 +1,11 @@
 
-![[Pasted image 20260906014155.png]]
+<img width="1601" height="367" alt="image" src="https://github.com/user-attachments/assets/c5a1b117-3466-4273-9bc5-4483fcef616c" />
 
 
 
-![[Pasted image 20260905223422.png]]
+
+<img width="1724" height="477" alt="image" src="https://github.com/user-attachments/assets/0585f7ed-12cc-4192-ab8b-cf1ff71828e1" />
+
 
 
 ```
@@ -41,10 +43,12 @@ Nmap done: 1 IP address (1 host up) scanned in 19.60 seconds
 
 
 
-![[Pasted image 20260906000135.png]]
+<img width="1847" height="890" alt="image" src="https://github.com/user-attachments/assets/58cec405-14ed-4f7e-a1e1-b8ee17b6f13b" />
 
 
-![[Pasted image 20260906000222.png]]
+
+<img width="1443" height="907" alt="image" src="https://github.com/user-attachments/assets/7843a374-802f-4630-acf6-8d52ea623d80" />
+
 
 
 ```
@@ -81,10 +85,12 @@ Nmap done: 1 IP address (1 host up) scanned in 19.60 seconds
 ```
 
 
-![[Pasted image 20260906001510.png]]
+<img width="1905" height="717" alt="image" src="https://github.com/user-attachments/assets/1cc32189-ddbb-4f63-808d-6a4d20790c49" />
 
 
-![[Pasted image 20260906001611.png]]
+
+<img width="1915" height="769" alt="image" src="https://github.com/user-attachments/assets/e75cd1d3-1f72-423f-a0db-fc76e9e786d5" />
+
 
 
 ```
@@ -305,4 +311,4 @@ marimo@cohort:~$
 ```
 
 
-![[Pasted image 20260906014114.png]]
+<img width="707" height="809" alt="image" src="https://github.com/user-attachments/assets/ba4b21e9-8a7e-4636-b80b-f130a220580a" />
