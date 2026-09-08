@@ -1,5 +1,6 @@
 
-![[Pasted image 20260729180334.png]]
+<img width="1594" height="391" alt="image" src="https://github.com/user-attachments/assets/a9154de3-be2b-4f21-bd83-900e5079b89c" />
+
 
 
 
@@ -45,7 +46,8 @@ HOP RTT       ADDRESS
 
 add nano /etc/hosts  
 
-![[Pasted image 20260729163912.png]]
+<img width="1833" height="831" alt="image" src="https://github.com/user-attachments/assets/ba0fad74-6475-4f75-994e-2792e8a4300b" />
+
 
 ```
 rpcclient -U "" -N 10.129.244.177
@@ -102,9 +104,11 @@ Nmap done: 1 IP address (1 host up) scanned in 2.97 seconds
    
 ```
 
-![[Pasted image 20260729164833.png]]
+<img width="1885" height="747" alt="image" src="https://github.com/user-attachments/assets/3c62c4e7-4873-4287-9040-35056e62e7fe" />
 
-![[Pasted image 20260729164903.png]]
+
+<img width="1506" height="679" alt="image" src="https://github.com/user-attachments/assets/024fa887-2c6a-4ac8-8c60-426ab9c39fdd" />
+
 
 ```
 nc -lvnp 4444  
@@ -156,7 +160,8 @@ iXzvcib3SrpZ
       
 ```
 
-![[Pasted image 20260729165642.png]]
+<img width="703" height="498" alt="image" src="https://github.com/user-attachments/assets/905177d9-d3fc-49e8-85d1-b32888d96636" />
+
 
 
 ```
@@ -405,4 +410,5 @@ bash-5.2#
 ```
 
 
-![[Screenshot_25.png]]
+<img width="1209" height="681" alt="image" src="https://github.com/user-attachments/assets/238dbffe-b68d-4812-ab3e-ccdae679d22a" />
+
