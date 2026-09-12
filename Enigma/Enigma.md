@@ -126,10 +126,11 @@ cp /tmp/onboarding/New_Employee_Access.pdf ~/Enigma/
 
 
 
-![[Pasted image 20260805210505.png]]
+<img width="1774" height="600" alt="image" src="https://github.com/user-attachments/assets/9f133d0e-d8db-44eb-9095-a950014dd7d0" />
 
 
-![[Pasted image 20260805210545.png]]
+<img width="1411" height="164" alt="image" src="https://github.com/user-attachments/assets/9119f350-ca39-41bd-b627-4d9ab7c5207a" />
+
 
 ```
 d ~/Enigma
@@ -177,11 +178,12 @@ Generated automatically by Enigma Corp Identity Management System.
 ```
 
 
-![[Pasted image 20260805213843.png]]
+<img width="1912" height="820" alt="image" src="https://github.com/user-attachments/assets/e385146c-658c-4282-ac63-010e0602949b" />
 
 
 
-![[Pasted image 20260805213729.png]]
+
+<img width="1911" height="767" alt="image" src="https://github.com/user-attachments/assets/30548d15-84cc-42c7-a757-77ff9e67e9bd" />
 
   
 Apologies for the delay. I have provisioned your access. Please find the details below:  
@@ -197,10 +199,12 @@ IT Support
 Enigma Corp
 
 
-![[Pasted image 20260805214246.png]]
+<img width="1900" height="901" alt="image" src="https://github.com/user-attachments/assets/1a682752-ba0e-4e15-a146-e6f25e6c26dc" />
 
 
-![[Pasted image 20260806022049.png]]
+
+<img width="1901" height="832" alt="image" src="https://github.com/user-attachments/assets/421ba80d-7bde-46ad-b3ae-3590c7514be3" />
+
 
 
 
