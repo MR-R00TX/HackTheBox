@@ -71,7 +71,8 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
 
-![[Pasted image 20260805204327.png]]
+<img width="1920" height="716" alt="image" src="https://github.com/user-attachments/assets/605c07e8-5c25-4e09-9eae-088b72d0c774" />
+
 
 
 
@@ -80,10 +81,12 @@ ffuf -u http://enigma.htb/ -w /usr/share/wordlists/seclists/Discovery/DNS/subdom
 
 ```
 
-![[Pasted image 20260805204416.png]]
+<img width="1840" height="749" alt="image" src="https://github.com/user-attachments/assets/7692e83c-887e-4e4a-a716-8d32a8e02732" />
 
 
-![[Pasted image 20260805204445.png]]
+
+<img width="1910" height="753" alt="image" src="https://github.com/user-attachments/assets/f4e8eb15-c544-4b26-ab6d-9e56514805aa" />
+
 
 
 
