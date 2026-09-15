@@ -1,5 +1,6 @@
 
-![[Pasted image 20260717001549.png]]
+<img width="1604" height="349" alt="image" src="https://github.com/user-attachments/assets/e1b2d26c-f4b5-4b76-bbc7-399f6d6f94f6" />
+
 
 
 
@@ -18,8 +19,9 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 33.03 seconds
 
 ```
+<img width="1631" height="697" alt="image" src="https://github.com/user-attachments/assets/f67dd9f6-1e97-46ef-8ebf-ee63d71d0169" />
 
-![[Pasted image 20260717002326.png]]
+
 
 ```
 wfuzz -c --hw 10 -Z -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-5000.txt -H "Host: FUZZ.nexus.htb" http://10.129.112.179
@@ -49,11 +51,14 @@ Requests/sec.: 0
 
 
 
-![[Pasted image 20260729010233.png]]
+<img width="1450" height="858" alt="image" src="https://github.com/user-attachments/assets/cbeaeb12-494d-4040-947b-0c98f427ee03" />
 
-![[Pasted image 20260729010301.png]]
 
-![[Pasted image 20260729010406.png]]
+<img width="1452" height="787" alt="image" src="https://github.com/user-attachments/assets/a2b61945-b72a-45ff-a47c-cdc8a08b29a8" />
+
+
+<img width="959" height="793" alt="image" src="https://github.com/user-attachments/assets/5324f109-83c6-4712-9fe8-f3019cf2efb1" />
+
 
 ```
 git diff 9b817fa 1615c46
