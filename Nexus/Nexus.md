@@ -87,15 +87,19 @@ index 5ae1bb2..cb7ccc3 100644
 
 ```
 
-![[Pasted image 20260729010626.png]]
-
-![[Pasted image 20260729013733.png]]
+<img width="1926" height="754" alt="image" src="https://github.com/user-attachments/assets/d05ffaf0-29da-4d3f-ab03-f90c413d46a8" />
 
 
+<img width="1785" height="884" alt="image" src="https://github.com/user-attachments/assets/a4ccd570-3d30-47bc-997c-bae1e4aed7bd" />
 
-![[Pasted image 20260729013819.png]]
 
-![[Pasted image 20260729014608.png]]
+
+
+<img width="1429" height="793" alt="image" src="https://github.com/user-attachments/assets/de470486-f264-4ba4-9a98-0e3a5668b5dc" />
+
+
+<img width="909" height="775" alt="image" src="https://github.com/user-attachments/assets/a4b45e92-f38c-404e-afb7-67a4ccc09097" />
+
 
 y27xb3ha!!74GbR
 
