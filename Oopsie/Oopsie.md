@@ -112,13 +112,16 @@ Progress: 3947 / 175326 (2.25%)^C
 
 
 
-![[Pasted image 20260715020442.png]]
-
-![[Pasted image 20260715020600.png]]
+<img width="1505" height="551" alt="image" src="https://github.com/user-attachments/assets/3cf56d94-15b9-40e5-a827-e57842febd4a" />
 
 
+<img width="1299" height="459" alt="image" src="https://github.com/user-attachments/assets/14a82224-4d83-4093-a2ea-f84882ba8c56" />
 
-![[Pasted image 20260715024220.png]]
+
+
+
+<img width="1325" height="667" alt="image" src="https://github.com/user-attachments/assets/06d38491-54fe-4351-ac88-85f6d50c5b85" />
+
 
 ```
 nc -lvnp 4444         
@@ -148,17 +151,20 @@ $
 
 ```
 
-![[Pasted image 20260715024641.png]]
+<img width="1123" height="809" alt="image" src="https://github.com/user-attachments/assets/93248143-7962-4664-8402-616cfd17f9f9" />
 
 
 
 
 
 
-![[Pasted image 20260715024919.png]]
+
+<img width="1052" height="279" alt="image" src="https://github.com/user-attachments/assets/694fae6d-117f-4553-ae5b-37cd912ba64a" />
 
 
-![[Pasted image 20260715025055.png]]
+
+<img width="999" height="599" alt="image" src="https://github.com/user-attachments/assets/2432e150-13cf-4569-83c8-53c03e94052f" />
+
 
 
 
