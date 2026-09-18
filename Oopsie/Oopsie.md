@@ -175,10 +175,11 @@ _find / -group bugtracker 2>/dev/null_
 ```
 
 
-![[Pasted image 20260715025242.png]]
+<img width="732" height="246" alt="image" src="https://github.com/user-attachments/assets/62df169d-6b0e-4711-a21d-d0fae3f0e5e7" />
 
 
-![[Pasted image 20260715025319.png]]
+<img width="1462" height="184" alt="image" src="https://github.com/user-attachments/assets/51597adb-4db3-4cfa-9bed-5e8fe9077bc5" />
+
 
 
 ```
@@ -239,7 +240,8 @@ root.txt (END)
 ```
 
 
-![[Pasted image 20260715025928.png]]
+<img width="1221" height="706" alt="image" src="https://github.com/user-attachments/assets/ed861bfb-b661-4f5f-9d7b-e204ad1a3fdc" />
+
 
 
 
