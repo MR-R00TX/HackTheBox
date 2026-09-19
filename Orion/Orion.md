@@ -217,7 +217,7 @@ hashcat -m 3200 hash.txt /usr/share/wordlists/rockyou.txt
 
 ```
 
-![[Pasted image 20260729182902.png]]
+<img width="1437" height="493" alt="image" src="https://github.com/user-attachments/assets/9ba168c5-71e8-4521-bf3c-f751c7cc4edb" />
 
 pass: darkangel
 
@@ -331,5 +331,5 @@ root@orion:~#
 ```
 
 
-![[Pasted image 20260729183751.png]]
+<img width="1211" height="690" alt="image" src="https://github.com/user-attachments/assets/54498ad3-7759-40f6-91d8-0561870cf536" />
 
