@@ -1,13 +1,13 @@
 
-![[Pasted image 20260730014618.png]]
+<img width="1604" height="357" alt="image" src="https://github.com/user-attachments/assets/79811989-818e-41c5-adc5-0d2a6f85a77a" />
 
 
 
 
-![[Pasted image 20260729235307.png]]
+<img width="1673" height="766" alt="image" src="https://github.com/user-attachments/assets/caea0aef-78b6-48bc-a534-3a38476f4b88" />
 
 
-![[Pasted image 20260729235338.png]]
+<img width="1920" height="882" alt="image" src="https://github.com/user-attachments/assets/177c8717-d555-49f0-9ba8-45a3daab0dc1" />
 
 
 curl -s http://10.129.244.220:8080/dashboard
@@ -16,10 +16,10 @@ curl -i  http://10.129.244.220:8080/dashboard
 
 /static/js/app.js
 
-![[Pasted image 20260730001558.png]]
+<img width="1221" height="645" alt="image" src="https://github.com/user-attachments/assets/2d321359-6425-47c3-80fa-9c2aeb0df439" />
 
 
-![[Pasted image 20260730002108.png]]
+<img width="1023" height="784" alt="image" src="https://github.com/user-attachments/assets/b552ab2d-05c2-4c2d-9cb8-5ff5bdd83883" />
 
 
 ```
@@ -56,9 +56,9 @@ jq: parse error: Invalid numeric literal at line 2, column 0
 
 ```
 
-![[Pasted image 20260730004627.png]]
+<img width="1909" height="805" alt="image" src="https://github.com/user-attachments/assets/8356f517-ebc1-44d5-95a8-d22a5a75002b" />
 
-![[Pasted image 20260730005503.png]]
+<img width="1884" height="714" alt="image" src="https://github.com/user-attachments/assets/fead7268-17e5-447c-804e-2f672a6e144b" />
 
 
 
