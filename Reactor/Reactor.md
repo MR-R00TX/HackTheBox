@@ -267,7 +267,8 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 
 
-![[Pasted image 20260803203907.png]]
+<img width="1902" height="754" alt="image" src="https://github.com/user-attachments/assets/aff610d4-2778-40c3-ac40-b1e2089a1905" />
+
 
 
 ```
@@ -459,23 +460,24 @@ r00t-5.2#
 ```
 
 
-![[Pasted image 20260803204648.png]]
+<img width="1348" height="485" alt="image" src="https://github.com/user-attachments/assets/30bab61c-21c7-4cde-96bf-a91649351cc9" />
 
 
 
-![[Pasted image 20260803204617.png]]
+<img width="816" height="534" alt="image" src="https://github.com/user-attachments/assets/296eba76-0d10-4d96-a769-3a2f9f76bbed" />
 
 
 
-![[Pasted image 20260803204547.png]]
+<img width="1008" height="474" alt="image" src="https://github.com/user-attachments/assets/c2a4f38f-181e-4eb4-be11-51b491923243" />
 
 
 
 
 
 
-![[Pasted image 20260803204732.png]]
+<img width="762" height="772" alt="image" src="https://github.com/user-attachments/assets/f9a725fb-9ecb-4bcc-8a7a-b094fd23677a" />
 
 
-![[Pasted image 20260803204803.png]]
+<img width="1599" height="318" alt="image" src="https://github.com/user-attachments/assets/369a5ddb-7baa-431f-9520-5a4d48c8f6d5" />
+
 
