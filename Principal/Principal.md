@@ -62,7 +62,7 @@ jq: parse error: Invalid numeric literal at line 2, column 0
 
 
 
-![[Pasted image 20260730005543.png]]
+<img width="1924" height="845" alt="image" src="https://github.com/user-attachments/assets/6de64892-fd7d-4a4f-bb58-30166ed25075" />
 
 
 ```
@@ -239,5 +239,5 @@ root@principal:~#
 ```
 
 
-![[Pasted image 20260730014531.png]]
+<img width="1210" height="710" alt="image" src="https://github.com/user-attachments/assets/f95fad16-ca27-49bf-92aa-3d0954a22ced" />
 
