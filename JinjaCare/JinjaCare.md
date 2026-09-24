@@ -21,7 +21,7 @@ First, we need to create a new account on the web application and sign in to the
 ## Step 2: Testing for HTML Injection
 After going to the dashboard, we find an option to change our name in the profile section. To test for HTML injection, we enter the following payload into the name field:
 
-```html
+html code
 <u> jack </u>
 <img width="1763" height="890" alt="image" src="https://github.com/user-attachments/assets/9ee81a31-5191-422e-a5f8-2f755898f74e" />
 
