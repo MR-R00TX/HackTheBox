@@ -1,10 +1,11 @@
 
-![[Pasted image 20260709032749.png]]
+<img width="1580" height="398" alt="image" src="https://github.com/user-attachments/assets/48a4e89b-5e9a-4a68-92d6-847e8eb69c81" />
 
 
 
 
-![[Pasted image 20260709024416.png]]
+<img width="1679" height="528" alt="image" src="https://github.com/user-attachments/assets/329d337f-467b-4ad2-a393-f718bc9ced68" />
+
 
 ```
 
@@ -101,7 +102,7 @@ http://unika.htb/a
  
 ```
 
-![[Pasted image 20260709025108.png]]
+<img width="1905" height="519" alt="image" src="https://github.com/user-attachments/assets/0b919c72-03f2-48a4-a6d5-3167d2bd6da8" />
 
 
 
@@ -179,21 +180,25 @@ responder -I tun0
 [+] Listening for events...      
 ```
 
-![[Pasted image 20260709031522.png]]
+<img width="1618" height="447" alt="image" src="https://github.com/user-attachments/assets/e9b7b5aa-c318-4d7f-a11b-4517bbb668b4" />
 
 
-![[Pasted image 20260709031449.png]]
-
-![[Pasted image 20260709031712.png]]
+<img width="1913" height="240" alt="image" src="https://github.com/user-attachments/assets/b761f264-9c9d-40b5-a61c-a24ae1fe1f6b" />
 
 
-![[Pasted image 20260709032228.png]]
+<img width="1916" height="419" alt="image" src="https://github.com/user-attachments/assets/5434aa49-e6ed-47cc-abcb-81bc0934f2aa" />
 
 
 
-![[Pasted image 20260709032351.png]]
+<img width="1904" height="668" alt="image" src="https://github.com/user-attachments/assets/e54d8a12-c2b6-4d69-a16b-f7f5413fe531" />
 
 
-![[Pasted image 20260709032649.png]]
+
+
+<img width="1921" height="722" alt="image" src="https://github.com/user-attachments/assets/d179f5e6-dddc-4ecf-9a6a-4f48e1717ec9" />
+
+
+
+<img width="1209" height="606" alt="image" src="https://github.com/user-attachments/assets/cb1270a9-bed0-4406-8239-15780888ab31" />
 
 
