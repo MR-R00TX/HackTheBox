@@ -1,5 +1,6 @@
 
-![[Pasted image 20260730180728.png]]
+<img width="1596" height="302" alt="image" src="https://github.com/user-attachments/assets/095f090b-e8e1-4a24-925a-adc867a72092" />
+
 
 
 ```
@@ -28,12 +29,13 @@ Nmap done: 1 IP address (1 host up) scanned in 21.31 seconds
 gobuster vhost -u http://silentium.htb/ -w /usr/share/wordlists/dirb/common.txt --append-domain
 ```
 
-![[Pasted image 20260730043834.png]]
+<img width="998" height="734" alt="image" src="https://github.com/user-attachments/assets/ca8ccbd9-3522-4ecc-8f08-272277e4b5e4" />
 
 
-![[Pasted image 20260730043909.png]]
+<img width="1924" height="848" alt="image" src="https://github.com/user-attachments/assets/b021cb61-627b-47bb-8899-745eff7997b4" />
 
-![[Pasted image 20260730043937.png]]
+<img width="1923" height="842" alt="image" src="https://github.com/user-attachments/assets/6582345a-92a4-4983-8695-9ee821be5fb1" />
+
 
 
 
