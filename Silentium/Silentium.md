@@ -58,10 +58,12 @@ curl -s http://staging.silentium.htb/api/v1/account/reset-password \
 
 
 
-![[Pasted image 20260730045130.png]]
+<img width="1910" height="806" alt="image" src="https://github.com/user-attachments/assets/2a87c1ad-7a0b-4959-8c84-95879d3c06ab" />
 
 
-![[Pasted image 20260730052653.png]]
+
+<img width="1929" height="720" alt="image" src="https://github.com/user-attachments/assets/292c1091-25b6-4036-9fa4-ec7950c1aad0" />
+
 
 
 hWp_8jB76zi0VtKSr2d9TfGK1fm6NuNPg1uA-8FsUJc
@@ -332,10 +334,12 @@ ben@silentium:~$
 
 ```
 
-![[Pasted image 20260730175922.png]]
+<img width="1323" height="720" alt="image" src="https://github.com/user-attachments/assets/7891a95f-c010-4ca4-93db-9cc811ff542d" />
 
 
-![[Pasted image 20260730180417.png]]
+
+<img width="1906" height="845" alt="image" src="https://github.com/user-attachments/assets/123ae69e-82bb-4c1e-b11e-66b303af4bef" />
+
 
 
 ```
@@ -409,11 +413,13 @@ To http://127.0.0.1:3001/admin123/11ddc3c6d693.git
 
 ```
 
-![[Pasted image 20260730180245.png]]
+<img width="1235" height="564" alt="image" src="https://github.com/user-attachments/assets/9249af4c-f1fd-4bdf-af46-7ab5a62bf75a" />
 
 
 
-![[Pasted image 20260730180103.png]]
+
+<img width="1427" height="743" alt="image" src="https://github.com/user-attachments/assets/d7f7e7fd-324f-408f-948c-ce00ad0ebe3b" />
+
 
 ```
 
@@ -460,7 +466,8 @@ To http://127.0.0.1:3001/admin123/11ddc3c6d693.git
 
 ```
 
-![[Pasted image 20260730180336.png]]
+<img width="1243" height="719" alt="image" src="https://github.com/user-attachments/assets/949b8189-1cf9-4f52-a4d0-dea87e5aea9b" />
 
 
-![[Pasted image 20260730180642.png]]
+
+<img width="881" height="858" alt="image" src="https://github.com/user-attachments/assets/f31cbd7f-a91c-461f-a4e0-37820250e7f9" />
