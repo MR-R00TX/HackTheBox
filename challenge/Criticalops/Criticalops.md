@@ -1,8 +1,9 @@
 ## 1. Initial Reconnaissance
 The engagement began by accessing the provided target URL:
 ```text
-[https://154.57.164.79:30594/dashboard](https://154.57.164.79:30594/dashboard)
-Visual Reference: <img width="1601" height="373" alt="image" src="https://github.com/user-attachments/assets/4747a77f-a592-4a2c-bcd2-d653a9507fb2" />
+[https://154.57.164.79:30594/dashboard](https://154.57.164.79:30594/dashboard ```
+
+<img width="1601" height="373" alt="image" src="https://github.com/user-attachments/assets/4747a77f-a592-4a2c-bcd2-d653a9507fb2" />
  <img width="1886" height="606" alt="image" src="https://github.com/user-attachments/assets/d2d3999c-34bc-42a6-8093-f7ab7b9b2c86" />
 
 
