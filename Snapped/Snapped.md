@@ -306,10 +306,10 @@ Stopped: Sat Aug  1 10:45:27 2026
 user :jonathan
 password:linkinpark
 
-![[Pasted image 20260801204811.png]]
+<img width="1897" height="438" alt="image" src="https://github.com/user-attachments/assets/3946fd94-ab7b-4a0c-a335-e6e4645efccc" />
 
 
-![[Pasted image 20260801204845.png]]
+<img width="1080" height="765" alt="image" src="https://github.com/user-attachments/assets/3cab9d89-da61-4c01-b127-bee5d8a18fc0" />
 
 
 ```
