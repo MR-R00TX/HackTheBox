@@ -790,8 +790,8 @@ bash-5.1#
 
 ```
 
-![[Pasted image 20260801213017.png]]
+<img width="1605" height="607" alt="image" src="https://github.com/user-attachments/assets/a1bbc5ab-35ae-4d8b-bb97-0cb2869355c3" />
 
 
-![[Pasted image 20260801213103.png]]
 
+<img width="718" height="789" alt="image" src="https://github.com/user-attachments/assets/8dccea1b-516f-4f89-9d29-d147201a06d1" />
