@@ -348,7 +348,8 @@ jonathan@snapped:~$ cat user.txt
 ```
 
 
-![[Pasted image 20260801212652.png]]
+<img width="1207" height="609" alt="image" src="https://github.com/user-attachments/assets/106d3b2e-a30f-4ae7-929b-89157c5327ef" />
+
 
 
 ```
@@ -648,7 +649,8 @@ kernel  6.17.0-19-generic
 
 ```
 
-![[Pasted image 20260801212809.png]]
+<img width="1918" height="422" alt="image" src="https://github.com/user-attachments/assets/320b5698-df7a-446e-a023-058b09504106" />
+
 
 
 ```
