@@ -485,7 +485,8 @@ Connection to 10.129.3.147 closed.
 ```
 
 
-![[Pasted image 20260804015439.png]]
+<img width="908" height="602" alt="image" src="https://github.com/user-attachments/assets/d0a667fb-712c-4f4f-9b6c-3428eb8079da" />
 
-![[Pasted image 20260804015602.png]]
+
+<img width="840" height="789" alt="image" src="https://github.com/user-attachments/assets/8d0ea956-6c97-4488-897e-6b6f3e3cbda8" />
 
