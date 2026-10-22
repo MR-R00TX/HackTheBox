@@ -288,10 +288,12 @@ mcp-dev@devhub:~$ cd ../analyst
 
 
 
-![[Pasted image 20260804015203.png]]
+<img width="1499" height="877" alt="image" src="https://github.com/user-attachments/assets/79ce7ee9-a8c0-413e-ad87-8dd5209e4a00" />
 
 
-![[Pasted image 20260804015315.png]]
+
+<img width="1489" height="663" alt="image" src="https://github.com/user-attachments/assets/5826639e-4d1d-4cc1-bf3b-143c370943b6" />
+
 
 ```
 analyst@devhub:~$ mkdir -p /home/analyst/.ssh && chmod 700 /home/analyst/.ssh
