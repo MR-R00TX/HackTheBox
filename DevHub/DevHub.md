@@ -1,7 +1,8 @@
 
 
 
-![[Pasted image 20260804015636.png]]
+<img width="1611" height="413" alt="image" src="https://github.com/user-attachments/assets/4c1a540d-6f7d-42f3-b4a0-435845655fce" />
+
 
 ```
 nmap -sCV 10.129.3.147             
@@ -70,9 +71,11 @@ Resolving deltas: 100% (4/4), done.
  
 ```
 
-![[Pasted image 20260804014303.png]]
+<img width="1033" height="649" alt="image" src="https://github.com/user-attachments/assets/cb87eafe-c4d8-4643-8655-4be9a06fb57f" />
 
-![[Pasted image 20260804014350.png]]
+
+<img width="1919" height="663" alt="image" src="https://github.com/user-attachments/assets/3371c3ac-dd31-447f-98ce-0865f35e5883" />
+
 
 ```
 (root㉿kali)-[/home/kali/Desktop/HTB/HTB-DevHub]
@@ -84,7 +87,8 @@ Keyboard interrupt received, exiting.
 
 ```
 
-![[Pasted image 20260804014528.png]]
+<img width="1078" height="209" alt="image" src="https://github.com/user-attachments/assets/cc705982-215b-4169-94b9-6d61fd898a43" />
+
 
 ```
 mcp-dev@devhub:/tmp$ wget http://10.10.14.60:8000/htb_enum.py
@@ -116,7 +120,8 @@ python3 htb_enum.py --section all
 ```
 
 
-![[Pasted image 20260804014623.png]]
+<img width="1213" height="678" alt="image" src="https://github.com/user-attachments/assets/08909aa7-a50c-42bf-91cd-42301f3056be" />
+
 
 ```
 mcp-dev@devhub:/tmp$ /home/analyst/jupyter-env/bin/jupyter-lab \
@@ -167,7 +172,8 @@ _laurel:x:998:998::/var/log/laurel:/bin/false
 
 ```
 
-![[Pasted image 20260804014835.png]]
+<img width="1483" height="791" alt="image" src="https://github.com/user-attachments/assets/4514b4fa-604e-452a-b5e7-01ce298aae77" />
+
 
 ```
 mcp-dev@devhub:/tmp$ mkdir .ssh
