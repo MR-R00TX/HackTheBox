@@ -627,7 +627,8 @@ Nmap done: 1 IP address (1 host up) scanned in 215.86 seconds
 ```
 
 
-![[Pasted image 20260809004540.png]]
+<img width="1920" height="914" alt="image" src="https://github.com/user-attachments/assets/432491a6-b9ac-45ad-ab47-c5e3ffb27d3c" />
+
 
 
 
