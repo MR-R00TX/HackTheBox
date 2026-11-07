@@ -10,6 +10,7 @@
 > **Difficulty:** Not specified
 
 ---
+<img width="1601" height="416" alt="image" src="https://github.com/user-attachments/assets/3d1631cd-22fe-448d-b2f4-3c51172b5a44" />
 
 ## Table of Contents
 
@@ -30,6 +31,8 @@
 
 Started with an Nmap scan to identify open ports and running services.
 
+<img width="1732" height="550" alt="image" src="https://github.com/user-attachments/assets/354bdfcd-f1d1-4103-811a-1d73480b7c34" />
+
 ### Command
 
 ```bash
@@ -43,6 +46,11 @@ nmap -p 22,139,445 --min-rate=1000 -sC -sV 10.129.234.54
 | 22/tcp | Open | SSH | OpenSSH 8.9p1 Ubuntu |
 | 139/tcp | Open | NetBIOS-SSN | Samba smbd 4 |
 | 445/tcp | Open | SMB | Samba smbd 4 |
+
+
+
+<img width="1402" height="757" alt="image" src="https://github.com/user-attachments/assets/6ae65c80-5f7a-45d2-a939-08b291b6b401" />
+
 
 ### Additional Findings
 
@@ -64,6 +72,7 @@ Enumerated available SMB shares.
 ```bash
 smbclient -L 10.129.234.54
 ```
+<img width="1621" height="368" alt="image" src="https://github.com/user-attachments/assets/b1a552d9-5418-47b4-949c-9c9b592b242a" />
 
 ### Discovered Shares
 
@@ -80,6 +89,8 @@ The SMB1 workgroup listing returned a protocol negotiation error. However, the `
 ## 3. Backup Share Analysis
 
 Connected to the backup share.
+
+<img width="1416" height="354" alt="image" src="https://github.com/user-attachments/assets/a8af2299-2e9b-4cec-b237-428ec6483902" />
 
 ### Command
 
@@ -230,6 +241,9 @@ The script contained backup-related configuration:
 ## 5. SSH Access
 
 After obtaining access to the `svc_backup` account, connected through SSH.
+
+
+<img width="1518" height="719" alt="image" src="https://github.com/user-attachments/assets/f2e05cb5-98c3-402c-8e2f-8ac904c7b80e" />
 
 ### Command
 
